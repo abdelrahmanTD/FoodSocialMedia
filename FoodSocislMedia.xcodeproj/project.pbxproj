@@ -13,6 +13,9 @@
 		3646DB8729C8A86C000ED5E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3646DB8629C8A86C000ED5E3 /* Preview Assets.xcassets */; };
 		3646DB8F29C8AE23000ED5E3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DB8E29C8AE23000ED5E3 /* LoginView.swift */; };
 		3646DB9329C8AFD5000ED5E3 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DB9229C8AFD5000ED5E3 /* Color+Extension.swift */; };
+		3646DB9629C9B216000ED5E3 /* LoginCredentialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DB9529C9B216000ED5E3 /* LoginCredentialsView.swift */; };
+		3646DB9929C9B24C000ED5E3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DB9829C9B24C000ED5E3 /* LoginViewModel.swift */; };
+		3646DB9B29C9BF0F000ED5E3 /* LoginCredentialField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DB9A29C9BF0F000ED5E3 /* LoginCredentialField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		3646DB8629C8A86C000ED5E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3646DB8E29C8AE23000ED5E3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3646DB9229C8AFD5000ED5E3 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		3646DB9529C9B216000ED5E3 /* LoginCredentialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentialsView.swift; sourceTree = "<group>"; };
+		3646DB9829C9B24C000ED5E3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		3646DB9A29C9BF0F000ED5E3 /* LoginCredentialField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentialField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,8 @@
 				3646DB7F29C8A86A000ED5E3 /* FoodSocislMediaApp.swift */,
 				3646DB8129C8A86A000ED5E3 /* ContentView.swift */,
 				3646DB8D29C8A9DE000ED5E3 /* View */,
+				3646DB9429C9B1B5000ED5E3 /* Subviews */,
+				3646DB9729C9B227000ED5E3 /* ViewModel */,
 				3646DB9029C8AF9F000ED5E3 /* Utilities */,
 				3646DB8329C8A86C000ED5E3 /* Assets.xcassets */,
 				3646DB8529C8A86C000ED5E3 /* Preview Content */,
@@ -95,6 +103,23 @@
 				3646DB9229C8AFD5000ED5E3 /* Color+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3646DB9429C9B1B5000ED5E3 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				3646DB9529C9B216000ED5E3 /* LoginCredentialsView.swift */,
+				3646DB9A29C9BF0F000ED5E3 /* LoginCredentialField.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		3646DB9729C9B227000ED5E3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3646DB9829C9B24C000ED5E3 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +193,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3646DB8F29C8AE23000ED5E3 /* LoginView.swift in Sources */,
+				3646DB9629C9B216000ED5E3 /* LoginCredentialsView.swift in Sources */,
+				3646DB9929C9B24C000ED5E3 /* LoginViewModel.swift in Sources */,
 				3646DB8229C8A86A000ED5E3 /* ContentView.swift in Sources */,
+				3646DB9B29C9BF0F000ED5E3 /* LoginCredentialField.swift in Sources */,
 				3646DB8029C8A86A000ED5E3 /* FoodSocislMediaApp.swift in Sources */,
 				3646DB9329C8AFD5000ED5E3 /* Color+Extension.swift in Sources */,
 			);

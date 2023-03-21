@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct LoginView: View {
+	@StateObject private var loginVM: LoginViewModel = LoginViewModel()
+	
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+		VStack(spacing: 24) {
+			Image("login-image")
+				.resizable()
+				.aspectRatio(contentMode: .fit)
+
+			Text("Welcome")
+				.font(.title)
+				.fontWeight(.bold)
+				.foregroundColor(.primaryColor)
+
+			// MARK: - Login Credentials
+			LoginCredentialsView(loginVM: self.loginVM)
+				.padding(.horizontal)
+
+			Spacer()
+		}
+		.edgesIgnoringSafeArea(.top)
     }
 }
 

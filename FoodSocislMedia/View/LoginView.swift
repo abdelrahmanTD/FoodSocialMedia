@@ -17,13 +17,24 @@ struct LoginView: View {
 				.aspectRatio(contentMode: .fit)
 
 			Text("Welcome")
-				.font(.title)
+				.font(.title3)
 				.fontWeight(.bold)
 				.foregroundColor(.primaryColor)
 
 			// MARK: - Login Credentials
 			LoginCredentialsView(loginVM: self.loginVM)
 				.padding(.horizontal)
+
+			Button(action: {}) {
+				Text("Sign in")
+					.foregroundColor(.white)
+					.padding()
+					.frame(maxWidth: .infinity)
+			}
+			.background(Color.primaryColor)
+			.clipShape(Capsule())
+			.padding(.horizontal)
+			.padding(.top, 16)
 
 			Spacer()
 		}

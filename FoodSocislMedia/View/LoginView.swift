@@ -25,6 +25,7 @@ struct LoginView: View {
 			LoginCredentialsView(loginVM: self.loginVM)
 				.padding(.horizontal)
 
+			// MARK: - Login Button
 			Button(action: {}) {
 				Text("Sign in")
 					.foregroundColor(.white)

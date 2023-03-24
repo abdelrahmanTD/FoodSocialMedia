@@ -26,7 +26,14 @@ struct LoginView: View {
 				.padding(.horizontal)
 
 			// MARK: - Login Button
-			Button(action: {}) {
+			Button(action: {
+				if loginVM.username.isEmpty || loginVM.password.isEmpty {
+					self.loginVM.username = ""
+					self.loginVM.password = ""
+				} else {
+					Task { try? await self.loginVM.singIn() }
+				}
+			}) {
 				Text("Sign in")
 					.foregroundColor(.white)
 					.padding()

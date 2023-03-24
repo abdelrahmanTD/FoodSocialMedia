@@ -38,6 +38,7 @@ struct LoginCredentialsView: View {
 			}
 			.submitLabel(.go)
 		}
+		.textInputAutocapitalization(.never)
 	}
 }
 

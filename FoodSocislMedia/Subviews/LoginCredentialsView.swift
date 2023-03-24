@@ -36,6 +36,7 @@ struct LoginCredentialsView: View {
 			.onSubmit {
 				Task { try await self.loginVM.singIn() }
 			}
+			.submitLabel(.go)
 		}
 	}
 }

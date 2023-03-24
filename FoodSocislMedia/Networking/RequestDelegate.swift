@@ -30,8 +30,8 @@ extension RequestDelegate {
 		// Creating a full URL components.
 		var urlComponents: URLComponents = URLComponents()
 		urlComponents.scheme = endpoint.scheme
-		urlComponents.host = urlComponents.host
-		urlComponents.path = urlComponents.path
+		urlComponents.host = endpoint.host
+		urlComponents.path = endpoint.path
 
 		// Adding query items if not nil.
 		if let params {
@@ -61,16 +61,12 @@ extension RequestDelegate {
 			urlRequest.httpBody = try JSONSerialization.data(withJSONObject: body)
 		}
 
-		print(urlRequest)
-
 		// Creating the session, and sending the request.
 		let (data, response) = try await URLSession.shared.data(for: urlRequest)
 
 		// Check over the response.
 		guard let response = response as? HTTPURLResponse else { throw RequestError.noResponse }
 		guard (200 ..< 300) ~= response.statusCode else { throw RequestError.invalidResponse }
-
-		print(response.statusCode)
 
 		// Decoding returned JSON response.
 		do {

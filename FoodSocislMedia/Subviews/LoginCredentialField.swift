@@ -58,7 +58,7 @@ struct LoginCredentialField: View {
 
 struct LoginCredentialField_Previews: PreviewProvider {
     static var previews: some View {
-		LoginView()
+		LoginView(loginVM: .init(coordinator: .init(appCoordinator: .init())))
 
 		LoginCredentialField(
 			label: "Password",

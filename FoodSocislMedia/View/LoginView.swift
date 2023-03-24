@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-	@StateObject private var loginVM: LoginViewModel = LoginViewModel()
+	@ObservedObject var loginVM: LoginViewModel
 	
     var body: some View {
 		VStack(spacing: 24) {
@@ -53,6 +53,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+		LoginView(loginVM: .init(coordinator: .init(appCoordinator: .init())))
     }
 }

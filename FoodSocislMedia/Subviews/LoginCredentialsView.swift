@@ -44,7 +44,7 @@ struct LoginCredentialsView: View {
 // MARK: - Previews
 struct LoginCredentialsView_Previews: PreviewProvider {
 	static var previews: some View {
-		LoginCredentialsView(loginVM: .init())
+		LoginCredentialsView(loginVM: .init(coordinator: .init(appCoordinator: .init())))
 			.padding()
 	}
 }

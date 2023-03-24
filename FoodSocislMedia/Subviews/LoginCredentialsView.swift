@@ -10,6 +10,8 @@ import SwiftUI
 struct LoginCredentialsView: View {
 	@ObservedObject var loginVM: LoginViewModel
 
+	@FocusState private var focusedField: FocusField?
+
 	var body: some View {
 		VStack(alignment: .leading, spacing: 24) {
 			// MARK: - Username Field
@@ -19,6 +21,7 @@ struct LoginCredentialsView: View {
 				text: $loginVM.username
 			)
 			.textContentType(.username)
+			.focused($focusedField, equals: .username)
 
 			// MARK: - Password Field
 			LoginCredentialField(
@@ -28,13 +31,24 @@ struct LoginCredentialsView: View {
 				text: $loginVM.password
 			)
 			.textContentType(.password)
+			.focused($focusedField, equals: .password)
+
 		}
 	}
 }
 
+// MARK: - Previews
 struct LoginCredentialsView_Previews: PreviewProvider {
 	static var previews: some View {
 		LoginCredentialsView(loginVM: .init())
 			.padding()
+	}
+}
+
+// MARK: - FocusField Enum
+extension LoginCredentialsView {
+	private enum FocusField: Hashable {
+		case username
+		case password
 	}
 }

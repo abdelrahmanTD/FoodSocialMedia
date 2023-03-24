@@ -11,7 +11,6 @@ enum RequestError: Error {
 	case invalidURL
 	case noResponse
 	case invalidResponse
-	case invalidDecoding
 	case unknownError
 }
 
@@ -21,7 +20,6 @@ extension RequestError {
 			case .invalidURL: return "Request URL is not correct."
 			case .noResponse: return "No response from the server."
 			case .invalidResponse: return "Response is not valid."
-			case .invalidDecoding: return "Couldn't decode response."
 			case .unknownError: return "Unknown error occurred."
 		}
 	}

@@ -14,7 +14,7 @@ struct LoginView: View {
 		VStack(spacing: 24) {
 			Image("login-image")
 				.resizable()
-				.aspectRatio(contentMode: .fit)
+				.aspectRatio(contentMode: .fill)
 
 			Text("Welcome")
 				.font(.title3)

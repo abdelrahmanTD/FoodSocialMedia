@@ -19,6 +19,16 @@ protocol RequestDelegate {
 }
 
 extension RequestDelegate {
+	/// Send a request for a retrieving a data from the server.
+	///
+	/// - Parameters:
+	///   - endpoint: The request URL.
+	///   - method: The type of HTTP method for the request.
+	///   - headers: The headers of the request.
+	///   - body: The body of the request.
+	///   - params: The parameters for the request.
+	///   - model: The model that response will decoded to.
+	/// - Returns: A decoded model.
 	func sendRequest<T>(
 		from endpoint: Endpoint,
 		method: HTTPMethod = .get,

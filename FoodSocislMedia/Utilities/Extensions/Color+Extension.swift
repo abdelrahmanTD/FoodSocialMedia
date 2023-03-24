@@ -34,4 +34,7 @@ extension Color {
 			blue: Double(b) / 255
 		)
 	}
+
+	/// Primary color of the application.
+	static let primaryColor: Color = Color("primaryColor")
 }

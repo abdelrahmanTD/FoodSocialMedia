@@ -40,6 +40,7 @@ struct LoginView: View {
 			Spacer()
 		}
 		.edgesIgnoringSafeArea(.top)
+		.keyboardAdaptive()
     }
 }
 

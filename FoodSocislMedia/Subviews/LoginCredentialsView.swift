@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginCredentialsView: View {
 	@ObservedObject var loginVM: LoginViewModel
 
-    var body: some View {
+	var body: some View {
 		VStack(alignment: .leading, spacing: 24) {
 			// MARK: - Username Field
 			LoginCredentialField(
@@ -18,6 +18,7 @@ struct LoginCredentialsView: View {
 				placeholder: "Enter your user name",
 				text: $loginVM.username
 			)
+			.textContentType(.username)
 
 			// MARK: - Password Field
 			LoginCredentialField(
@@ -26,13 +27,14 @@ struct LoginCredentialsView: View {
 				isSecure: true,
 				text: $loginVM.password
 			)
+			.textContentType(.password)
 		}
-    }
+	}
 }
 
 struct LoginCredentialsView_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		LoginCredentialsView(loginVM: .init())
 			.padding()
-    }
+	}
 }

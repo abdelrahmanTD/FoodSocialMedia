@@ -22,6 +22,7 @@ struct LoginCredentialsView: View {
 			)
 			.textContentType(.username)
 			.focused($focusedField, equals: .username)
+			.onSubmit { focusedField = .password }
 
 			// MARK: - Password Field
 			LoginCredentialField(
@@ -32,7 +33,9 @@ struct LoginCredentialsView: View {
 			)
 			.textContentType(.password)
 			.focused($focusedField, equals: .password)
-
+			.onSubmit {
+				Task { try await self.loginVM.singIn() }
+			}
 		}
 	}
 }

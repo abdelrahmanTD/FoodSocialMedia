@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CustomTabBar: View {
-	private let tabs: [Tabs] = [.home, .shop, .discount, .gallery, .profile]
+	private let tabs: [TabBar] = [.home, .shop, .discount, .gallery, .profile]
 
-	@State private var selectedTab: Tabs = .home
+	@Binding var selectedTab: TabBar
 	@Namespace var animation
 
     var body: some View {
@@ -33,7 +33,7 @@ struct CustomTabBar: View {
 
 struct CustomTabBar_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTabBar()
+		CustomTabBar(selectedTab: .constant(.home))
 			.previewLayout(.sizeThatFits)
     }
 }

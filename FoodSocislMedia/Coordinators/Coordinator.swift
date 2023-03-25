@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol Coordinator {
+public protocol Coordinator: AnyObject {
 	func startNavigation() -> Void
 }

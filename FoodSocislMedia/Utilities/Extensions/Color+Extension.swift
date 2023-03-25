@@ -37,4 +37,5 @@ extension Color {
 
 	/// Primary color of the application.
 	static let primaryColor: Color = Color("primaryColor")
+	static let iconColor: Color = Color(hexCode: "475569")
 }

@@ -7,14 +7,32 @@
 
 import Foundation
 
+/// The coordinator which responsible for the whole app.
 final class AppCoordinator: ObservableObject, Coordinator {
-	// A property to check if user logged in or not.
-	//
-	// According to that property the coordinator will decide which view will
-	// appear to user.
-
 	/// A property to detect if user logged in successfully or not.
 	@Published var isLoggedIn : Bool = false
 
-	func startNavigation() -> Void { }
+	/// A user who logged in.
+	@Published var user: User?
+
+	/// The login coordinator instance.
+	@Published var loginCoordinator: LoginCoordinator!
+	/// The main coordinator instance.
+	@Published var mainCoordinator: MainCoordinator!
+
+	init() {
+		self.loginCoordinator = LoginCoordinator(appCoordinator: self)
+		self.mainCoordinator = MainCoordinator(appCoordinator: self)
+	}
+
+	/// Change the scenes if user logged in successfully, or logged out.
+	func startNavigation() -> Void {
+		if isLoggedIn {
+			self.loginCoordinator = nil
+			self.mainCoordinator = MainCoordinator(appCoordinator: self)
+		} else {
+			self.mainCoordinator = nil
+			self.loginCoordinator = LoginCoordinator(appCoordinator: self)
+		}
+	}
 }

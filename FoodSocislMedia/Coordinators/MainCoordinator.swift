@@ -10,14 +10,26 @@ import Foundation
 /// The coordinator which responsible for the whole scenes
 /// after user logged in successfully.
 final class MainCoordinator: ObservableObject, Coordinator {
-	@Published var tab: TabBar = .home
+	/// An instance of TabsCoordinator
+	@Published var tabsCoordinator: TabsCoordinator!
+
+	/// The user who logged in
+	private let user: User
 
 	/// An instance of AppCoordinator.
 	private weak var appCoordinator: AppCoordinator?
 
-	init(appCoordinator: AppCoordinator) {
+	init(user: User, appCoordinator: AppCoordinator) {
+		self.user = user
 		self.appCoordinator = appCoordinator
+		self.tabsCoordinator = TabsCoordinator(user: self.user, mainCoordinator: self)
 	}
 
-	func startNavigation() {}
+	deinit {
+		print(self, "is deallocated")
+	}
+
+	func startNavigation() {
+		self.tabsCoordinator?.startNavigation()
+	}
 }

@@ -11,18 +11,19 @@ import Foundation
 final class AppCoordinator: ObservableObject, Coordinator {
 	/// A property to detect if user logged in successfully or not.
 	@Published var isLoggedIn : Bool = false
-
 	/// A user who logged in.
 	@Published var user: User?
+
+	// MARK: - Coordinators
 
 	/// The login coordinator instance.
 	@Published var loginCoordinator: LoginCoordinator!
 	/// The main coordinator instance.
-	@Published var mainCoordinator: MainCoordinator!
+	@Published var mainCoordinator: MainCoordinator?
 
 	init() {
 		self.loginCoordinator = LoginCoordinator(appCoordinator: self)
-		self.mainCoordinator = MainCoordinator(appCoordinator: self)
+		self.loginCoordinator.delegate = self
 	}
 
 	/// Change the scenes if user logged in successfully, or logged out.
@@ -33,6 +34,14 @@ final class AppCoordinator: ObservableObject, Coordinator {
 		} else {
 			self.mainCoordinator = nil
 			self.loginCoordinator = LoginCoordinator(appCoordinator: self)
+			self.loginCoordinator.delegate = self
 		}
+	}
+}
+
+extension AppCoordinator: LoginCoordinatorDelegate {
+	func loginCoordinatorDidFinishLoggingIn(_ coordinator: LoginCoordinator, withUser user: User) {
+		self.isLoggedIn = true
+		self.user = user
 	}
 }

@@ -10,17 +10,21 @@ import SwiftUI
 struct CustomTabBar: View {
 	private let tabs: [TabBar] = [.home, .shop, .discount, .gallery, .profile]
 
-	@Binding var selectedTab: TabBar
 	@Namespace var animation
+	@Binding var selectedTab: TabBar
 
-    var body: some View {
+	var body: some View {
 		VStack(spacing: 0) {
 			Divider()
 			HStack(spacing: 0) {
 				ForEach(tabs, id: \.self) { tab in
 					// Tab Button
-					TabBarButton(label: tab, selectedTab: self.$selectedTab, animation: animation)
-
+					TabBarButton(
+						label: tab,
+						selectedTab: self.$selectedTab,
+						animation: animation
+					)
+					
 					if tab != tabs.last { Spacer() }
 				}
 			}
@@ -28,12 +32,14 @@ struct CustomTabBar: View {
 			.padding(.bottom)
 			.background(.white)
 		}
-    }
+	}
 }
 
 struct CustomTabBar_Previews: PreviewProvider {
-    static var previews: some View {
+	static let testUser = User.previewUser
+
+	static var previews: some View {
 		CustomTabBar(selectedTab: .constant(.home))
 			.previewLayout(.sizeThatFits)
-    }
+	}
 }

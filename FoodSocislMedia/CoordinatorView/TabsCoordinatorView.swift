@@ -23,7 +23,7 @@ struct TabsCoordinatorView: View {
 	@ViewBuilder
 	private func tabView(for tab: TabBar) -> some View {
 		switch tab {
-			case .home: HomeView()
+			case .home: FeedView()
 			default: PlaceholderView(title: tab.rawValue.capitalized)
 		}
 	}

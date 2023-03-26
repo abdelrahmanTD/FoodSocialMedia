@@ -13,7 +13,8 @@ struct FoodSocialMediaApp: App {
 
     var body: some Scene {
         WindowGroup {
-			ContentView(appCoordinator: self.appCoordinator)
+			ContentView()
+				.environmentObject(self.appCoordinator)
         }
     }
 }

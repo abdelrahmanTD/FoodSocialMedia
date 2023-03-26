@@ -15,3 +15,16 @@ struct User: Identifiable, Decodable {
 	let lastName: String
 	let gender: String
 }
+
+#if DEBUG
+extension User {
+	static let previewUser = User(
+		id: 1,
+		username: "abdelrahman_99adm",
+		email: "abdelrahman99adm@gmail.com",
+		firstName: "Abdelrahman",
+		lastName: "Talaat",
+		gender: "Male"
+	)
+}
+#endif

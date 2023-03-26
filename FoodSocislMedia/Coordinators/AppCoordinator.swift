@@ -12,7 +12,7 @@ final class AppCoordinator: ObservableObject, Coordinator {
 	/// A property to detect if user logged in successfully or not.
 	@Published var isLoggedIn : Bool = false
 	/// A user who logged in.
-	@Published var user: User?
+	var user: User?
 
 	// MARK: - Coordinators
 

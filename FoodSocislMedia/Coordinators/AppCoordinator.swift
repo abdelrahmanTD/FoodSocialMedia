@@ -30,7 +30,7 @@ final class AppCoordinator: ObservableObject, Coordinator {
 	func startNavigation() -> Void {
 		if isLoggedIn {
 			self.loginCoordinator = nil
-			self.mainCoordinator = MainCoordinator(appCoordinator: self)
+			self.mainCoordinator = MainCoordinator(user: self.user, appCoordinator: self)
 		} else {
 			self.mainCoordinator = nil
 			self.loginCoordinator = LoginCoordinator(appCoordinator: self)

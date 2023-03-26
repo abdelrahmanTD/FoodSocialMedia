@@ -12,8 +12,7 @@ struct TabsCoordinatorView: View {
 
     var body: some View {
 		VStack {
-			self.tabView(for: tabsCoordinator
-				.selectedTab)
+			self.tabView(for: tabsCoordinator.selectedTab)
 
 			// MARK: - Custom Tab Bar
 			CustomTabBar(selectedTab: self.$tabsCoordinator.selectedTab)

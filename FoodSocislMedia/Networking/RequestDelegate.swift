@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 protocol RequestDelegate {
 	func sendRequest<T>(
@@ -16,6 +17,11 @@ protocol RequestDelegate {
 		params: [String: String]?,
 		model: T.Type
 	) async throws -> T where T: Decodable
+
+	func sendRequest<T>(
+		from endpoint: Endpoint,
+		params: [String: String]?
+	) -> AnyPublisher<[T], Error> where T: Decodable
 }
 
 extension RequestDelegate {
@@ -93,5 +99,31 @@ extension RequestDelegate {
 		} catch {
 			fatalError("Failed to decode \(model) from bundle: \(error.localizedDescription)")
 		}
+	}
+
+	func sendRequest<T>(
+		from endpoint: Endpoint,
+		params: [String: String]? = nil
+	) -> AnyPublisher<[T], Error> where T: Decodable {
+		// Creating a full URL components.
+		var urlComponents: URLComponents = URLComponents()
+		urlComponents.scheme = endpoint.scheme
+		urlComponents.host = endpoint.host
+		urlComponents.path = endpoint.path
+
+		// Adding query items if not nil.
+		if let params {
+			let queryItems = params
+				.map { URLQueryItem(name: $0.key, value: $0.value) }
+
+			urlComponents.queryItems = queryItems
+		}
+
+		let request = URLRequest(url: urlComponents.url!)
+
+		return URLSession.shared.dataTaskPublisher(for: request)
+			.map(\.data)
+			.decode(type: [T].self, decoder: JSONDecoder())
+			.eraseToAnyPublisher()
 	}
 }

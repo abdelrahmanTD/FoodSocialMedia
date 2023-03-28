@@ -35,12 +35,18 @@ struct FeedListRow: View {
 
 			Text(post.body)
 				.lineLimit(4)
+				.multilineTextAlignment(.leading)
+
+			if let images = post.images {
+				ImagesPreview(layout: ImageLayout(rawValue: images.count)!, images: images)
+					.cornerRadius(10)
+			}
 		}
 	}
 }
 
 struct FeedListRow_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		FeedListRow(post: Post.previewPost)
-    }
+	}
 }

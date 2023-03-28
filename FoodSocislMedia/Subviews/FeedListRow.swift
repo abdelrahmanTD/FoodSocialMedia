@@ -10,8 +10,17 @@ import SwiftUI
 struct FeedListRow: View {
 	let post: Post
 
+	let shouldBold: Bool?
+	let word: String?
+
 	private var fullName: String {
 		post.user != nil ? "\(post.user!.firstName) \(post.user!.lastName)" : ""
+	}
+
+	init(post: Post) {
+		self.post = post
+		self.shouldBold = nil
+		self.word = nil
 	}
 
 	var body: some View {
@@ -33,9 +42,17 @@ struct FeedListRow: View {
 				}
 			}
 
-			Text(post.body)
-				.lineLimit(4)
-				.multilineTextAlignment(.leading)
+			if shouldBold != nil && shouldBold == true {
+				if let word {
+					Text(self.boldText(word: word))
+						.lineLimit(3)
+						.multilineTextAlignment(.leading)
+				}
+			} else {
+				Text(self.post.body)
+					.lineLimit(3)
+					.multilineTextAlignment(.leading)
+			}
 
 			if let images = post.images {
 				ImagesPreview(layout: ImageLayout(rawValue: images.count)!, images: images)
@@ -43,10 +60,28 @@ struct FeedListRow: View {
 			}
 		}
 	}
+
+	private func boldText(word: String) -> AttributedString {
+		var attributedString = AttributedString(post.body)
+		if let range = attributedString.range(of: word) {
+			attributedString[range].font = .body.bold()
+		}
+		return attributedString
+	}
 }
 
 struct FeedListRow_Previews: PreviewProvider {
 	static var previews: some View {
 		FeedListRow(post: Post.previewPost)
+		FeedListRow(post: Post.previewPost, word: "something")
+	}
+}
+
+// MARK: - Initialisers
+extension FeedListRow {
+	init(post: Post, word: String) {
+		self.post = post
+		self.shouldBold = true
+		self.word = word
 	}
 }

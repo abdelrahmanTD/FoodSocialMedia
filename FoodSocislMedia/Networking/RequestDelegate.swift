@@ -121,7 +121,13 @@ extension RequestDelegate {
 			urlComponents.queryItems = queryItems
 		}
 
-		let request = URLRequest(url: urlComponents.url!)
+		guard let url = urlComponents.url else {
+			print("No URL")
+			return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
+		}
+
+		let request = URLRequest(url: url)
+		print(url)
 
 		return URLSession.shared.dataTaskPublisher(for: request)
 			.map(\.data)

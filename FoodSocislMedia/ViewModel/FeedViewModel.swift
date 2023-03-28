@@ -33,7 +33,6 @@ final class FeedViewModel: ObservableObject, RequestDelegate {
 
 	deinit {
 		cancellable.forEach {
-			print($0)
 			$0.cancel()
 		}
 
@@ -64,7 +63,6 @@ final class FeedViewModel: ObservableObject, RequestDelegate {
 			self.posts.append(contentsOf: postsResponse.posts)
 			self.getUserNames()
 			self.lastLimit += postsResponse.limit
-			print(postsResponse.total)
 			self.totalPosts = postsResponse.total
 		}
 

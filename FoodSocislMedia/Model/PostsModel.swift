@@ -9,6 +9,7 @@ import Foundation
 
 struct Posts: Decodable {
 	let posts: [Post]
+	let total: Int
 	let limit: Int
 }
 

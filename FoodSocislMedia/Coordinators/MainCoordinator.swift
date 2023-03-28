@@ -33,3 +33,10 @@ final class MainCoordinator: ObservableObject, Coordinator {
 		self.tabsCoordinator?.startNavigation()
 	}
 }
+
+extension MainCoordinator: TabsCoordinatorDelegate {
+	func tabsCoordinatorDidFinish(_ coordinator: TabsCoordinator) {
+		print("User logged out")
+		self.appCoordinator?.isLoggedIn.toggle()
+	}
+}

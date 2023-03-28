@@ -17,6 +17,11 @@ enum TabBar: String {
 	case profile
 }
 
+// MARK: - Tabs Coordinator Delegate
+protocol TabsCoordinatorDelegate: AnyObject {
+	func tabsCoordinatorDidFinish(_ coordinator: TabsCoordinator)
+}
+
 // MARK: - TabsCoordinator
 /// The coordinator which responsible for changing the view when changing a
 /// the selected tab.
@@ -27,16 +32,17 @@ final class TabsCoordinator: ObservableObject, Coordinator {
 	/// The user who logged in
 	private let user: User
 
-	// MARK: - Coordinators
+	@Published var profileVM: ProfileViewModel!
 	@Published var feedCoordinator: FeedCoordinator!
 
+	weak var delegate: TabsCoordinatorDelegate?
 	/// The instance of main coordinator.
 	private weak var mainCoordinator: MainCoordinator?
-	
 
 	init(user: User, mainCoordinator: MainCoordinator) {
 		self.user = user
 		self.mainCoordinator = mainCoordinator
+		self.delegate = mainCoordinator
 	}
 
 	deinit {
@@ -47,7 +53,12 @@ final class TabsCoordinator: ObservableObject, Coordinator {
 		// Based of selected tab, initialise corresponding tab coordinator
 		switch selectedTab {
 			case .home: self.feedCoordinator = FeedCoordinator(tabsCoordinator: self)
+			case .profile: self.profileVM = ProfileViewModel(user: self.user, tabsCoordinator: self)
 			default: return
 		}
+	}
+
+	func logOut() {
+		delegate?.tabsCoordinatorDidFinish(self)
 	}
 }

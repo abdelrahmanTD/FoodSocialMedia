@@ -39,6 +39,12 @@ extension Post {
 		// Return formatted date
 		return "\(formattedString) ago"
 	}
+
+	var images: [String]? {
+		let images: [[String]] = [["post-1", "post-2", "post-3"], ["post-4"], ["post-5"], ["post-6", "post-7", "post-8", "post-9"], ["post-1", "post-1"]]
+		let bool: Bool = .random()
+		return bool ? images.randomElement()! : nil
+	}
 }
 
 #if DEBUG

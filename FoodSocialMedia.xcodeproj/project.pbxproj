@@ -37,6 +37,11 @@
 		3646DBE229CF3165000ED5E3 /* TabBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DBE129CF3165000ED5E3 /* TabBarIndicator.swift */; };
 		3646DBE829CF645B000ED5E3 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DBE729CF645B000ED5E3 /* PlaceholderView.swift */; };
 		3646DBEA29CF6DC1000ED5E3 /* TabsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DBE929CF6DC1000ED5E3 /* TabsCoordinator.swift */; };
+		3647A5E829D2E81A007DB112 /* SingleImageLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647A5E729D2E81A007DB112 /* SingleImageLayout.swift */; };
+		3647A5EA29D2E84A007DB112 /* DoubleImagesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647A5E929D2E84A007DB112 /* DoubleImagesLayout.swift */; };
+		3647A5EC29D2E866007DB112 /* ThreeImagesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647A5EB29D2E866007DB112 /* ThreeImagesLayout.swift */; };
+		3647A5EE29D2E8A2007DB112 /* FourImagesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647A5ED29D2E8A2007DB112 /* FourImagesLayout.swift */; };
+		3647A5F029D2E908007DB112 /* ImagesPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647A5EF29D2E908007DB112 /* ImagesPreview.swift */; };
 		36EB679F29D2412F006B143A /* FeedCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB679E29D2412F006B143A /* FeedCoordinatorView.swift */; };
 		36EB67C529D276AE006B143A /* APIServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB67C429D276AE006B143A /* APIServiceEndpoint.swift */; };
 		36EB67C729D27BC0006B143A /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB67C629D27BC0006B143A /* LoaderView.swift */; };
@@ -77,6 +82,11 @@
 		3646DBE129CF3165000ED5E3 /* TabBarIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIndicator.swift; sourceTree = "<group>"; };
 		3646DBE729CF645B000ED5E3 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		3646DBE929CF6DC1000ED5E3 /* TabsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCoordinator.swift; sourceTree = "<group>"; };
+		3647A5E729D2E81A007DB112 /* SingleImageLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageLayout.swift; sourceTree = "<group>"; };
+		3647A5E929D2E84A007DB112 /* DoubleImagesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleImagesLayout.swift; sourceTree = "<group>"; };
+		3647A5EB29D2E866007DB112 /* ThreeImagesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeImagesLayout.swift; sourceTree = "<group>"; };
+		3647A5ED29D2E8A2007DB112 /* FourImagesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourImagesLayout.swift; sourceTree = "<group>"; };
+		3647A5EF29D2E908007DB112 /* ImagesPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesPreview.swift; sourceTree = "<group>"; };
 		36EB679E29D2412F006B143A /* FeedCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinatorView.swift; sourceTree = "<group>"; };
 		36EB67C429D276AE006B143A /* APIServiceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceEndpoint.swift; sourceTree = "<group>"; };
 		36EB67C629D27BC0006B143A /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
@@ -186,6 +196,8 @@
 				3646DBBB29CE1CE3000ED5E3 /* CustomNavigationBar.swift */,
 				36EB67C629D27BC0006B143A /* LoaderView.swift */,
 				36EB67CC29D2B0D2006B143A /* FeedListRow.swift */,
+				3647A5EF29D2E908007DB112 /* ImagesPreview.swift */,
+				3647A5E629D2E807007DB112 /* ImageLayouts */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -249,6 +261,17 @@
 				3646DBE129CF3165000ED5E3 /* TabBarIndicator.swift */,
 			);
 			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		3647A5E629D2E807007DB112 /* ImageLayouts */ = {
+			isa = PBXGroup;
+			children = (
+				3647A5E729D2E81A007DB112 /* SingleImageLayout.swift */,
+				3647A5E929D2E84A007DB112 /* DoubleImagesLayout.swift */,
+				3647A5EB29D2E866007DB112 /* ThreeImagesLayout.swift */,
+				3647A5ED29D2E8A2007DB112 /* FourImagesLayout.swift */,
+			);
+			path = ImageLayouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,24 +350,29 @@
 				3646DBB629CE1178000ED5E3 /* MainCoordinator.swift in Sources */,
 				3646DBBC29CE1CE3000ED5E3 /* CustomNavigationBar.swift in Sources */,
 				364055A429D2312600FEA9B0 /* PostsModel.swift in Sources */,
+				3647A5EA29D2E84A007DB112 /* DoubleImagesLayout.swift in Sources */,
 				3646DBA529CD122D000ED5E3 /* RequestError.swift in Sources */,
 				3646DBA729CD146F000ED5E3 /* RequestDelegate.swift in Sources */,
 				36EB67C929D2A331006B143A /* FeedCoordinator.swift in Sources */,
 				3646DB9929C9B24C000ED5E3 /* LoginViewModel.swift in Sources */,
+				3647A5E829D2E81A007DB112 /* SingleImageLayout.swift in Sources */,
 				3646DBA929CD15EF000ED5E3 /* HTTPMethods.swift in Sources */,
 				3646DBA329CD1193000ED5E3 /* Endpoint.swift in Sources */,
 				3646DBAE29CD20AC000ED5E3 /* UserModel.swift in Sources */,
 				3646DBB829CE1219000ED5E3 /* MainCoordinatorView.swift in Sources */,
 				3646DB8229C8A86A000ED5E3 /* ContentView.swift in Sources */,
+				3647A5EE29D2E8A2007DB112 /* FourImagesLayout.swift in Sources */,
 				3646DBE029CF2F69000ED5E3 /* TabBarButton.swift in Sources */,
 				3646DBE829CF645B000ED5E3 /* PlaceholderView.swift in Sources */,
 				3646DB9B29C9BF0F000ED5E3 /* LoginCredentialField.swift in Sources */,
+				3647A5EC29D2E866007DB112 /* ThreeImagesLayout.swift in Sources */,
 				36EB67C529D276AE006B143A /* APIServiceEndpoint.swift in Sources */,
 				3646DB8029C8A86A000ED5E3 /* FoodSocialMediaApp.swift in Sources */,
 				364055A229D0E47B00FEA9B0 /* FeedViewModel.swift in Sources */,
 				3646DBB029CD355D000ED5E3 /* KeyboardAdaptive+Extension.swift in Sources */,
 				3646DBDE29CF2E65000ED5E3 /* CustomTabBar.swift in Sources */,
 				3646DB9329C8AFD5000ED5E3 /* Color+Extension.swift in Sources */,
+				3647A5F029D2E908007DB112 /* ImagesPreview.swift in Sources */,
 				36EB67CB29D2A4F1006B143A /* Formatters.swift in Sources */,
 				3646DBEA29CF6DC1000ED5E3 /* TabsCoordinator.swift in Sources */,
 				3646DBB429CDE9CC000ED5E3 /* LoginCoordinator.swift in Sources */,

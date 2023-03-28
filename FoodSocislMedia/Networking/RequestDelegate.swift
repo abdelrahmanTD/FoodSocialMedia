@@ -20,8 +20,9 @@ protocol RequestDelegate {
 
 	func sendRequest<T>(
 		from endpoint: Endpoint,
-		params: [String: String]?
-	) -> AnyPublisher<[T], Error> where T: Decodable
+		params: [String: String]?,
+		for model: T.Type
+	) -> AnyPublisher<T, Error> where T: Decodable
 }
 
 extension RequestDelegate {
@@ -105,7 +106,7 @@ extension RequestDelegate {
 		from endpoint: Endpoint,
 		params: [String: String]? = nil,
 		for model: T.Type
-	) -> AnyPublisher<[T], Error> where T: Decodable {
+	) -> AnyPublisher<T, Error> where T: Decodable {
 		// Creating a full URL components.
 		var urlComponents: URLComponents = URLComponents()
 		urlComponents.scheme = endpoint.scheme
@@ -124,7 +125,7 @@ extension RequestDelegate {
 
 		return URLSession.shared.dataTaskPublisher(for: request)
 			.map(\.data)
-			.decode(type: [T].self, decoder: JSONDecoder())
+			.decode(type: T.self, decoder: JSONDecoder())
 			.eraseToAnyPublisher()
 	}
 }

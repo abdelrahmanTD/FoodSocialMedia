@@ -62,10 +62,6 @@ struct ProfileView_Previews: PreviewProvider {
 					mainCoordinator: .init(
 						user: .previewUser,
 						appCoordinator: .init()
-					),
-					mainCoordinatorDelegate: MainCoordinator(
-						user: .previewUser,
-						appCoordinator: .init()
 					)
 				)
 			)

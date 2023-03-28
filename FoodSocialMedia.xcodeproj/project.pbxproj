@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		364055A029CF926C00FEA9B0 /* TabsCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3640559F29CF926C00FEA9B0 /* TabsCoordinatorView.swift */; };
+		364055A229D0E47B00FEA9B0 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364055A129D0E47B00FEA9B0 /* FeedViewModel.swift */; };
+		364055A429D2312600FEA9B0 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364055A329D2312600FEA9B0 /* PostsModel.swift */; };
 		3646DB8029C8A86A000ED5E3 /* FoodSocialMediaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DB7F29C8A86A000ED5E3 /* FoodSocialMediaApp.swift */; };
 		3646DB8229C8A86A000ED5E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DB8129C8A86A000ED5E3 /* ContentView.swift */; };
 		3646DB8429C8A86C000ED5E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3646DB8329C8A86C000ED5E3 /* Assets.xcassets */; };
@@ -28,17 +30,25 @@
 		3646DBB429CDE9CC000ED5E3 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DBB329CDE9CC000ED5E3 /* LoginCoordinator.swift */; };
 		3646DBB629CE1178000ED5E3 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DBB529CE1178000ED5E3 /* MainCoordinator.swift */; };
 		3646DBB829CE1219000ED5E3 /* MainCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DBB729CE1219000ED5E3 /* MainCoordinatorView.swift */; };
-		3646DBBA29CE198B000ED5E3 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DBB929CE198B000ED5E3 /* FeedView.swift */; };
+		3646DBBA29CE198B000ED5E3 /* FeedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DBB929CE198B000ED5E3 /* FeedListView.swift */; };
 		3646DBBC29CE1CE3000ED5E3 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DBBB29CE1CE3000ED5E3 /* CustomNavigationBar.swift */; };
 		3646DBDE29CF2E65000ED5E3 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DBDD29CF2E65000ED5E3 /* CustomTabBar.swift */; };
 		3646DBE029CF2F69000ED5E3 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DBDF29CF2F69000ED5E3 /* TabBarButton.swift */; };
 		3646DBE229CF3165000ED5E3 /* TabBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DBE129CF3165000ED5E3 /* TabBarIndicator.swift */; };
 		3646DBE829CF645B000ED5E3 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DBE729CF645B000ED5E3 /* PlaceholderView.swift */; };
 		3646DBEA29CF6DC1000ED5E3 /* TabsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646DBE929CF6DC1000ED5E3 /* TabsCoordinator.swift */; };
+		36EB679F29D2412F006B143A /* FeedCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB679E29D2412F006B143A /* FeedCoordinatorView.swift */; };
+		36EB67C529D276AE006B143A /* APIServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB67C429D276AE006B143A /* APIServiceEndpoint.swift */; };
+		36EB67C729D27BC0006B143A /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB67C629D27BC0006B143A /* LoaderView.swift */; };
+		36EB67C929D2A331006B143A /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB67C829D2A331006B143A /* FeedCoordinator.swift */; };
+		36EB67CB29D2A4F1006B143A /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB67CA29D2A4F1006B143A /* Formatters.swift */; };
+		36EB67CD29D2B0D2006B143A /* FeedListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB67CC29D2B0D2006B143A /* FeedListRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3640559F29CF926C00FEA9B0 /* TabsCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCoordinatorView.swift; sourceTree = "<group>"; };
+		364055A129D0E47B00FEA9B0 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		364055A329D2312600FEA9B0 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		3646DB7C29C8A86A000ED5E3 /* FoodSocialMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodSocialMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3646DB7F29C8A86A000ED5E3 /* FoodSocialMediaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSocialMediaApp.swift; sourceTree = "<group>"; };
 		3646DB8129C8A86A000ED5E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,13 +70,19 @@
 		3646DBB329CDE9CC000ED5E3 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		3646DBB529CE1178000ED5E3 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		3646DBB729CE1219000ED5E3 /* MainCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorView.swift; sourceTree = "<group>"; };
-		3646DBB929CE198B000ED5E3 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		3646DBB929CE198B000ED5E3 /* FeedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListView.swift; sourceTree = "<group>"; };
 		3646DBBB29CE1CE3000ED5E3 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		3646DBDD29CF2E65000ED5E3 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		3646DBDF29CF2F69000ED5E3 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		3646DBE129CF3165000ED5E3 /* TabBarIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIndicator.swift; sourceTree = "<group>"; };
 		3646DBE729CF645B000ED5E3 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		3646DBE929CF6DC1000ED5E3 /* TabsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCoordinator.swift; sourceTree = "<group>"; };
+		36EB679E29D2412F006B143A /* FeedCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinatorView.swift; sourceTree = "<group>"; };
+		36EB67C429D276AE006B143A /* APIServiceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceEndpoint.swift; sourceTree = "<group>"; };
+		36EB67C629D27BC0006B143A /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		36EB67C829D2A331006B143A /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
+		36EB67CA29D2A4F1006B143A /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		36EB67CC29D2B0D2006B143A /* FeedListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +101,7 @@
 			children = (
 				3646DBB729CE1219000ED5E3 /* MainCoordinatorView.swift */,
 				3640559F29CF926C00FEA9B0 /* TabsCoordinatorView.swift */,
+				36EB679E29D2412F006B143A /* FeedCoordinatorView.swift */,
 			);
 			path = CoordinatorView;
 			sourceTree = "<group>";
@@ -137,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				3646DB8E29C8AE23000ED5E3 /* LoginView.swift */,
-				3646DBB929CE198B000ED5E3 /* FeedView.swift */,
+				3646DBB929CE198B000ED5E3 /* FeedListView.swift */,
 				3646DBE729CF645B000ED5E3 /* PlaceholderView.swift */,
 			);
 			path = View;
@@ -146,6 +163,7 @@
 		3646DB9029C8AF9F000ED5E3 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				36EB67CA29D2A4F1006B143A /* Formatters.swift */,
 				3646DB9129C8AFC1000ED5E3 /* Extensions */,
 			);
 			path = Utilities;
@@ -166,6 +184,8 @@
 				3646DB9529C9B216000ED5E3 /* LoginCredentialsView.swift */,
 				3646DB9A29C9BF0F000ED5E3 /* LoginCredentialField.swift */,
 				3646DBBB29CE1CE3000ED5E3 /* CustomNavigationBar.swift */,
+				36EB67C629D27BC0006B143A /* LoaderView.swift */,
+				36EB67CC29D2B0D2006B143A /* FeedListRow.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -174,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				3646DB9829C9B24C000ED5E3 /* LoginViewModel.swift */,
+				364055A129D0E47B00FEA9B0 /* FeedViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -185,6 +206,7 @@
 				3646DBA829CD15EF000ED5E3 /* HTTPMethods.swift */,
 				3646DBA429CD122D000ED5E3 /* RequestError.swift */,
 				3646DBA629CD146F000ED5E3 /* RequestDelegate.swift */,
+				36EB67C429D276AE006B143A /* APIServiceEndpoint.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -197,6 +219,7 @@
 				3646DBB329CDE9CC000ED5E3 /* LoginCoordinator.swift */,
 				3646DBB529CE1178000ED5E3 /* MainCoordinator.swift */,
 				3646DBE929CF6DC1000ED5E3 /* TabsCoordinator.swift */,
+				36EB67C829D2A331006B143A /* FeedCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -205,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				3646DBAD29CD20AC000ED5E3 /* UserModel.swift */,
+				364055A329D2312600FEA9B0 /* PostsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,8 +326,10 @@
 				3646DB9629C9B216000ED5E3 /* LoginCredentialsView.swift in Sources */,
 				3646DBB629CE1178000ED5E3 /* MainCoordinator.swift in Sources */,
 				3646DBBC29CE1CE3000ED5E3 /* CustomNavigationBar.swift in Sources */,
+				364055A429D2312600FEA9B0 /* PostsModel.swift in Sources */,
 				3646DBA529CD122D000ED5E3 /* RequestError.swift in Sources */,
 				3646DBA729CD146F000ED5E3 /* RequestDelegate.swift in Sources */,
+				36EB67C929D2A331006B143A /* FeedCoordinator.swift in Sources */,
 				3646DB9929C9B24C000ED5E3 /* LoginViewModel.swift in Sources */,
 				3646DBA929CD15EF000ED5E3 /* HTTPMethods.swift in Sources */,
 				3646DBA329CD1193000ED5E3 /* Endpoint.swift in Sources */,
@@ -313,16 +339,22 @@
 				3646DBE029CF2F69000ED5E3 /* TabBarButton.swift in Sources */,
 				3646DBE829CF645B000ED5E3 /* PlaceholderView.swift in Sources */,
 				3646DB9B29C9BF0F000ED5E3 /* LoginCredentialField.swift in Sources */,
+				36EB67C529D276AE006B143A /* APIServiceEndpoint.swift in Sources */,
 				3646DB8029C8A86A000ED5E3 /* FoodSocialMediaApp.swift in Sources */,
+				364055A229D0E47B00FEA9B0 /* FeedViewModel.swift in Sources */,
 				3646DBB029CD355D000ED5E3 /* KeyboardAdaptive+Extension.swift in Sources */,
 				3646DBDE29CF2E65000ED5E3 /* CustomTabBar.swift in Sources */,
 				3646DB9329C8AFD5000ED5E3 /* Color+Extension.swift in Sources */,
+				36EB67CB29D2A4F1006B143A /* Formatters.swift in Sources */,
 				3646DBEA29CF6DC1000ED5E3 /* TabsCoordinator.swift in Sources */,
 				3646DBB429CDE9CC000ED5E3 /* LoginCoordinator.swift in Sources */,
+				36EB679F29D2412F006B143A /* FeedCoordinatorView.swift in Sources */,
 				3646DBA129CB9C47000ED5E3 /* Coordinator.swift in Sources */,
 				3646DBE229CF3165000ED5E3 /* TabBarIndicator.swift in Sources */,
+				36EB67CD29D2B0D2006B143A /* FeedListRow.swift in Sources */,
+				36EB67C729D27BC0006B143A /* LoaderView.swift in Sources */,
 				364055A029CF926C00FEA9B0 /* TabsCoordinatorView.swift in Sources */,
-				3646DBBA29CE198B000ED5E3 /* FeedView.swift in Sources */,
+				3646DBBA29CE198B000ED5E3 /* FeedListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

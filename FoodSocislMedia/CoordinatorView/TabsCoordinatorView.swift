@@ -19,6 +19,9 @@ struct TabsCoordinatorView: View {
 				.padding(.bottom)
 		}
 		.onAppear { self.tabsCoordinator.startNavigation() }
+		.onChange(of: self.tabsCoordinator.selectedTab) { _ in
+			self.tabsCoordinator.startNavigation()
+		}
     }
 
 	@ViewBuilder
@@ -27,6 +30,13 @@ struct TabsCoordinatorView: View {
 			case .home:
 				if let feedCoordinator = tabsCoordinator.feedCoordinator {
 					FeedCoordinatorView(feedCoordinator: feedCoordinator)
+				} else {
+					ProgressView()
+				}
+
+			case .profile:
+				if let profileVM = tabsCoordinator.profileVM {
+					ProfileView(profileVM: profileVM)
 				} else {
 					ProgressView()
 				}

@@ -18,12 +18,19 @@ struct TabsCoordinatorView: View {
 			CustomTabBar(selectedTab: self.$tabsCoordinator.selectedTab)
 				.padding(.bottom)
 		}
+		.onAppear { self.tabsCoordinator.startNavigation() }
     }
 
 	@ViewBuilder
 	private func tabView(for tab: TabBar) -> some View {
 		switch tab {
-			case .home: FeedView()
+			case .home:
+				if let feedCoordinator = tabsCoordinator.feedCoordinator {
+					FeedCoordinatorView(feedCoordinator: feedCoordinator)
+				} else {
+					ProgressView()
+				}
+				
 			default: PlaceholderView(title: tab.rawValue.capitalized)
 		}
 	}

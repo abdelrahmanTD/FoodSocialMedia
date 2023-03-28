@@ -9,11 +9,11 @@ import SwiftUI
 
 struct MainCoordinatorView: View {
 	@ObservedObject var mainCoordinator: MainCoordinator
-
+	
 	init(mainCoordinator: MainCoordinator) {
 		self.mainCoordinator = mainCoordinator
 	}
-
+	
 	var body: some View {
 		TabsCoordinatorView(tabsCoordinator: mainCoordinator.tabsCoordinator!)
 			.edgesIgnoringSafeArea(.bottom)
@@ -23,6 +23,11 @@ struct MainCoordinatorView: View {
 
 struct MainCoordinatorView_Previews: PreviewProvider {
 	static var previews: some View {
-		MainCoordinatorView(mainCoordinator: .init(user: User.previewUser, appCoordinator: .init()))
+		MainCoordinatorView(
+			mainCoordinator: .init(
+				user: User.previewUser,
+				appCoordinator: .init()
+			)
+		)
 	}
 }

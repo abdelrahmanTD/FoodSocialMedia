@@ -13,6 +13,8 @@ struct FeedListRow: View {
 	let shouldBold: Bool?
 	let word: String?
 
+	let lineLimit: Int?
+
 	private var fullName: String {
 		post.user != nil ? "\(post.user!.firstName) \(post.user!.lastName)" : ""
 	}
@@ -21,6 +23,7 @@ struct FeedListRow: View {
 		self.post = post
 		self.shouldBold = nil
 		self.word = nil
+		self.lineLimit = 3
 	}
 
 	var body: some View {
@@ -50,7 +53,7 @@ struct FeedListRow: View {
 				}
 			} else {
 				Text(self.post.body)
-					.lineLimit(3)
+					.lineLimit(self.lineLimit)
 					.multilineTextAlignment(.leading)
 			}
 
@@ -83,5 +86,13 @@ extension FeedListRow {
 		self.post = post
 		self.shouldBold = true
 		self.word = word
+		self.lineLimit = 3
+	}
+
+	init(post: Post, lineLimit: Int?) {
+		self.post = post
+		self.lineLimit = lineLimit
+		self.shouldBold = nil
+		self.word = nil
 	}
 }

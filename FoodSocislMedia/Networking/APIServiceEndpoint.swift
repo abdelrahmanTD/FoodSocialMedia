@@ -10,6 +10,7 @@ import Foundation
 enum APIServiceEndpoint {
 	case login
 	case posts
+	case user(id: Int)
 }
 
 extension APIServiceEndpoint: Endpoint {
@@ -17,6 +18,7 @@ extension APIServiceEndpoint: Endpoint {
 		switch self {
 			case .login: return "/auth/login"
 			case .posts: return "/posts"
+			case .user(let id): return "/users/\(id)"
 		}
 	}
 }

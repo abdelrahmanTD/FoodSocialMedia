@@ -39,3 +39,14 @@ extension Post {
 		return "\(formattedString) ago"
 	}
 }
+
+#if DEBUG
+extension Post {
+	static let previewPost = Post(
+		id: 1,
+		body: "Craving something delicious? Try our new dish - a savory mix of roasted vegetables and quinoa, topped with a zesty garlic. Yum!",
+		userId: 1,
+		user: User.previewUser
+	)
+}
+#endif

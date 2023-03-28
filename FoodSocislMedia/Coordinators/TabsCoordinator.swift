@@ -28,11 +28,11 @@ final class TabsCoordinator: ObservableObject, Coordinator {
 	private let user: User
 
 	// MARK: - Coordinators
+	@Published var feedCoordinator: FeedCoordinator!
 
 	/// The instance of main coordinator.
 	private weak var mainCoordinator: MainCoordinator?
-
-	// Tabs Coordinator
+	
 
 	init(user: User, mainCoordinator: MainCoordinator) {
 		self.user = user
@@ -45,5 +45,9 @@ final class TabsCoordinator: ObservableObject, Coordinator {
 
 	func startNavigation() {
 		// Based of selected tab, initialise corresponding tab coordinator
+		switch selectedTab {
+			case .home: self.feedCoordinator = FeedCoordinator(tabsCoordinator: self)
+			default: return
+		}
 	}
 }

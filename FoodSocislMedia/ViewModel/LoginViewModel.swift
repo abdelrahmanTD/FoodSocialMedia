@@ -37,7 +37,7 @@ final class LoginViewModel: ObservableObject, RequestDelegate {
 			// Sending the request with the http method, headers, and the body,
 			// and assign the result to app coordinator user.
 			self.loginCoordinator!.user = try await sendRequest(
-				from: LoginEndpoint(),
+				from: APIServiceEndpoint.login,
 				method: requestMethod,
 				headers: headers,
 				body: body,
@@ -58,12 +58,5 @@ final class LoginViewModel: ObservableObject, RequestDelegate {
 			print(error.localizedDescription)
 			self.errorMessage = RequestError.unknownError.errorMessage
 		}
-	}
-}
-
-// MARK: - LoginEndpoint
-extension LoginViewModel {
-	private struct LoginEndpoint: Endpoint {
-		var path: String { "/auth/login" }
 	}
 }

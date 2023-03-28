@@ -9,9 +9,7 @@ import SwiftUI
 
 struct CustomNavigationBar: View {
 	@Binding var isSearching: Bool
-	@Binding var searchingText: String
-
-	let searchAction: (() -> Void)?
+	@ObservedObject var searchVM: SearchViewModel
 
 	var body: some View {
 		VStack {
@@ -34,9 +32,8 @@ struct CustomNavigationBar: View {
 					if isSearching {
 						SearchingFieldView(
 							isSearching: self.$isSearching,
-							searchingText: self.$searchingText
+							searchVM: self.searchVM
 						)
-						.onSubmit(of: .search, self.searchAction!)
 					}
 				}
 				.padding(.horizontal)
@@ -78,8 +75,17 @@ struct CustomNavigationBar_Previews: PreviewProvider {
 	static var previews: some View {
 		CustomNavigationBar(
 			isSearching: .constant(false),
-			searchingText: .constant(""),
-			searchAction: nil
+			searchVM: .init(
+				feedCoordinator: .init(
+					tabsCoordinator: .init(
+						user: .previewUser,
+						mainCoordinator: .init(
+							user: .previewUser,
+							appCoordinator: .init()
+						)
+					)
+				)
+			)
 		)
 	}
 }

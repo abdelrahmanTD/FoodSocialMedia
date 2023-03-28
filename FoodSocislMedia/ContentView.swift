@@ -23,7 +23,14 @@ struct ContentView: View {
 					ProgressView()
 				}
 			} else {
-				LoginView(loginVM: appCoordinator.loginCoordinator.loginVM)
+				if let loginCoordinator = appCoordinator.loginCoordinator {
+					LoginView(loginVM: loginCoordinator.loginVM)
+				} else {
+					// Show ProgressView until login coordinator finish
+					// initialisation
+					ProgressView()
+				}
+
 			}
 		}
 		.onChange(of: self.appCoordinator.isLoggedIn) { _ in

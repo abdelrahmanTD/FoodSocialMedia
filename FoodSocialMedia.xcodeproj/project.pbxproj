@@ -42,6 +42,11 @@
 		3647A5EC29D2E866007DB112 /* ThreeImagesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647A5EB29D2E866007DB112 /* ThreeImagesLayout.swift */; };
 		3647A5EE29D2E8A2007DB112 /* FourImagesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647A5ED29D2E8A2007DB112 /* FourImagesLayout.swift */; };
 		3647A5F029D2E908007DB112 /* ImagesPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647A5EF29D2E908007DB112 /* ImagesPreview.swift */; };
+		3647A5F229D2F7F9007DB112 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647A5F129D2F7F9007DB112 /* SearchViewModel.swift */; };
+		3647A5F429D2F9B0007DB112 /* SearchingFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647A5F329D2F9B0007DB112 /* SearchingFieldView.swift */; };
+		3647A5F629D305DB007DB112 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647A5F529D305DB007DB112 /* SearchListView.swift */; };
+		3647A5F829D31613007DB112 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647A5F729D31613007DB112 /* ProfileView.swift */; };
+		3647A5FA29D3168F007DB112 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647A5F929D3168F007DB112 /* ProfileViewModel.swift */; };
 		36EB679F29D2412F006B143A /* FeedCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB679E29D2412F006B143A /* FeedCoordinatorView.swift */; };
 		36EB67C529D276AE006B143A /* APIServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB67C429D276AE006B143A /* APIServiceEndpoint.swift */; };
 		36EB67C729D27BC0006B143A /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB67C629D27BC0006B143A /* LoaderView.swift */; };
@@ -87,6 +92,11 @@
 		3647A5EB29D2E866007DB112 /* ThreeImagesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeImagesLayout.swift; sourceTree = "<group>"; };
 		3647A5ED29D2E8A2007DB112 /* FourImagesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourImagesLayout.swift; sourceTree = "<group>"; };
 		3647A5EF29D2E908007DB112 /* ImagesPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesPreview.swift; sourceTree = "<group>"; };
+		3647A5F129D2F7F9007DB112 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		3647A5F329D2F9B0007DB112 /* SearchingFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingFieldView.swift; sourceTree = "<group>"; };
+		3647A5F529D305DB007DB112 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
+		3647A5F729D31613007DB112 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3647A5F929D3168F007DB112 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		36EB679E29D2412F006B143A /* FeedCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinatorView.swift; sourceTree = "<group>"; };
 		36EB67C429D276AE006B143A /* APIServiceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceEndpoint.swift; sourceTree = "<group>"; };
 		36EB67C629D27BC0006B143A /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
@@ -166,6 +176,9 @@
 				3646DB8E29C8AE23000ED5E3 /* LoginView.swift */,
 				3646DBB929CE198B000ED5E3 /* FeedListView.swift */,
 				3646DBE729CF645B000ED5E3 /* PlaceholderView.swift */,
+				3647A5F329D2F9B0007DB112 /* SearchingFieldView.swift */,
+				3647A5F529D305DB007DB112 /* SearchListView.swift */,
+				3647A5F729D31613007DB112 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,7 +206,6 @@
 			children = (
 				3646DB9529C9B216000ED5E3 /* LoginCredentialsView.swift */,
 				3646DB9A29C9BF0F000ED5E3 /* LoginCredentialField.swift */,
-				3646DBBB29CE1CE3000ED5E3 /* CustomNavigationBar.swift */,
 				36EB67C629D27BC0006B143A /* LoaderView.swift */,
 				36EB67CC29D2B0D2006B143A /* FeedListRow.swift */,
 				3647A5EF29D2E908007DB112 /* ImagesPreview.swift */,
@@ -207,6 +219,8 @@
 			children = (
 				3646DB9829C9B24C000ED5E3 /* LoginViewModel.swift */,
 				364055A129D0E47B00FEA9B0 /* FeedViewModel.swift */,
+				3647A5F129D2F7F9007DB112 /* SearchViewModel.swift */,
+				3647A5F929D3168F007DB112 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -248,6 +262,7 @@
 		3646DBDB29CF2E2C000ED5E3 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				3646DBBB29CE1CE3000ED5E3 /* CustomNavigationBar.swift */,
 				3646DBDC29CF2E44000ED5E3 /* CustomTabBar */,
 			);
 			path = CustomView;
@@ -356,10 +371,13 @@
 				36EB67C929D2A331006B143A /* FeedCoordinator.swift in Sources */,
 				3646DB9929C9B24C000ED5E3 /* LoginViewModel.swift in Sources */,
 				3647A5E829D2E81A007DB112 /* SingleImageLayout.swift in Sources */,
+				3647A5F629D305DB007DB112 /* SearchListView.swift in Sources */,
+				3647A5F829D31613007DB112 /* ProfileView.swift in Sources */,
 				3646DBA929CD15EF000ED5E3 /* HTTPMethods.swift in Sources */,
 				3646DBA329CD1193000ED5E3 /* Endpoint.swift in Sources */,
 				3646DBAE29CD20AC000ED5E3 /* UserModel.swift in Sources */,
 				3646DBB829CE1219000ED5E3 /* MainCoordinatorView.swift in Sources */,
+				3647A5FA29D3168F007DB112 /* ProfileViewModel.swift in Sources */,
 				3646DB8229C8A86A000ED5E3 /* ContentView.swift in Sources */,
 				3647A5EE29D2E8A2007DB112 /* FourImagesLayout.swift in Sources */,
 				3646DBE029CF2F69000ED5E3 /* TabBarButton.swift in Sources */,
@@ -369,7 +387,9 @@
 				36EB67C529D276AE006B143A /* APIServiceEndpoint.swift in Sources */,
 				3646DB8029C8A86A000ED5E3 /* FoodSocialMediaApp.swift in Sources */,
 				364055A229D0E47B00FEA9B0 /* FeedViewModel.swift in Sources */,
+				3647A5F429D2F9B0007DB112 /* SearchingFieldView.swift in Sources */,
 				3646DBB029CD355D000ED5E3 /* KeyboardAdaptive+Extension.swift in Sources */,
+				3647A5F229D2F7F9007DB112 /* SearchViewModel.swift in Sources */,
 				3646DBDE29CF2E65000ED5E3 /* CustomTabBar.swift in Sources */,
 				3646DB9329C8AFD5000ED5E3 /* Color+Extension.swift in Sources */,
 				3647A5F029D2E908007DB112 /* ImagesPreview.swift in Sources */,

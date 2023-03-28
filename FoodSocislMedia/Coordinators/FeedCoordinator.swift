@@ -8,13 +8,18 @@
 import Foundation
 
 final class FeedCoordinator: ObservableObject, Coordinator {
+	@Published var isSearching: Bool = false
+	@Published var searchingText: String = ""
+	
 	@Published var feedVM: FeedViewModel!
+	@Published var searchVM: SearchViewModel!
 
 	private weak var tabsCoordinator: TabsCoordinator?
 
 	init(tabsCoordinator: TabsCoordinator) {
 		self.tabsCoordinator = tabsCoordinator
 		self.feedVM = FeedViewModel(feedCoordinator: self)
+		self.searchVM = SearchViewModel(feedCoordinator: self)
 	}
 
 	deinit {
@@ -22,6 +27,6 @@ final class FeedCoordinator: ObservableObject, Coordinator {
 	}
 
 	func startNavigation() {
-
+		
 	}
 }

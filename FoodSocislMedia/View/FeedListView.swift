@@ -14,8 +14,9 @@ struct FeedListView: View {
 		List {
 			ForEach(feedVM.posts) { post in
 				FeedListRow(post: post)
+					.padding(.vertical)
 			}
-			
+
 			if feedVM.isLoading {
 				LoaderView(isFailed: self.$feedVM.isRequestFailed)
 					.onAppear(perform: feedVM.getPosts)

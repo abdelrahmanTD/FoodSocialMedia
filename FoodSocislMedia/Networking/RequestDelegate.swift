@@ -103,7 +103,8 @@ extension RequestDelegate {
 
 	func sendRequest<T>(
 		from endpoint: Endpoint,
-		params: [String: String]? = nil
+		params: [String: String]? = nil,
+		for model: T.Type
 	) -> AnyPublisher<[T], Error> where T: Decodable {
 		// Creating a full URL components.
 		var urlComponents: URLComponents = URLComponents()

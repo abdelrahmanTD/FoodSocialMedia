@@ -16,6 +16,18 @@ struct User: Identifiable, Decodable {
 	let gender: String
 }
 
+extension User {
+	/// Count of instances
+	private static var count: Int = 0
+
+	var profilePicture: String {
+		let images: [String] = ["profile-1", "profile-2", "profile-3"]
+		let index = User.count % images.count
+		User.count += 1
+		return images[index]
+	}
+}
+
 #if DEBUG
 extension User {
 	static let previewUser = User(

@@ -14,9 +14,16 @@ struct FeedCoordinatorView: View {
 		NavigationView {
 			VStack {
 				// MARK: - Custom Navigation Bar
-				CustomNavigationBar()
+				CustomNavigationBar(
+					isSearching: $feedCoordinator.isSearching,
+					searchVM: feedCoordinator.searchVM
+				)
 
-				FeedListView(feedVM: feedCoordinator.feedVM)
+				if feedCoordinator.isSearching {
+					SearchListView(searchVM: feedCoordinator.searchVM)
+				} else {
+					FeedListView(feedVM: feedCoordinator.feedVM)
+				}
 			}
 		}
 		.navigationBarHidden(true)

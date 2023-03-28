@@ -11,6 +11,7 @@ enum APIServiceEndpoint {
 	case login
 	case posts
 	case user(id: Int)
+	case search
 }
 
 extension APIServiceEndpoint: Endpoint {
@@ -19,6 +20,7 @@ extension APIServiceEndpoint: Endpoint {
 			case .login: return "/auth/login"
 			case .posts: return "/posts"
 			case .user(let id): return "/users/\(id)"
+			case .search: return "/posts/search/"
 		}
 	}
 }
